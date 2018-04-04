@@ -1,0 +1,23 @@
+{
+  "name": "ilogicsdevbot",
+  "version": "1.0.0",
+  "description": "Experimental bot",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jameschee0/ilogicsdev.git"
+  },
+  "author": "iLogics",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "request": "^2.72.0"
+  },
+  "engines": {
+    "node": "~4.1.2"
+  }
+}
