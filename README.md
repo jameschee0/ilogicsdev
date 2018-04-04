@@ -16,3 +16,7 @@ Code Reviewer: iLogics Memebers
 #베타 테스팅 계획
 Date: 2018년 5월 3일 -2018년도 동신과학고등학교 체육대회
 -> 5월 1일 부터 beta tester 받음. 모두 환영!!
+
+#TODO
+1) Update VERIFY_TOKEN
+2) add PAGE_ACCESS_TOKEN to environment variable
