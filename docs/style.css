@@ -506,35 +506,8 @@ img {
 
 .hero-slide-content .slide-img {
     color: #fff;
-    margin-top: 100px;
+    margin-top: 50px;
     font-weight: 400;
-}
-
-.hero-slides .owl-prev,
-.hero-slides .owl-next {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
-    line-height: 60px;
-    text-align: center;
-    top: 50%;
-    margin-top: -30px;
-    left: 50px;
-    border-radius: 50%;
-    color: #a2baff;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
-
-.hero-slides .owl-next {
-    left: auto;
-    right: 50px;
-}
-
-.hero-slides .owl-prev:hover,
-.hero-slides .owl-next:hover {
-    background-color: #4a7aec;
 }
 
 /* -------------------------
