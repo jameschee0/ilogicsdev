@@ -6,10 +6,10 @@ const
   request = require('request'),
   express = require('express'),
   body_parser = require('body-parser'),
-  template = require('./message/Template.js'),
+  Template = require('./message/Template.js'),
   app = express().use(body_parser.json()); // creates express http server
 
-const template = new template();
+const template = new Template();
 
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
