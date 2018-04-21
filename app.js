@@ -13,10 +13,7 @@ const
 const template = new Template();
 
 // Sets server port and logs message on success
-app.listen(process.env.PORT || 1337, () => {
-  console.log('webhook is listening'));
-  setupAPI();
-}
+app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 // Accepts POST requests at /webhook endpoint
 app.post('/webhook', (req, res) => {
@@ -26,6 +23,7 @@ app.post('/webhook', (req, res) => {
 
   // Check the webhook event is from a Page subscription
   if (body.object === 'page') {
+    setupAPI();
     body.entry.forEach(function(entry) {
 
       // Gets the body of the webhook event
