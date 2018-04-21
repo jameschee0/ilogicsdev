@@ -23,7 +23,7 @@ app.post('/webhook', (req, res) => {
 
   // Check the webhook event is from a Page subscription
   if (body.object === 'page') {
-
+    template.persistentMenu();
     body.entry.forEach(function(entry) {
 
       // Gets the body of the webhook event
