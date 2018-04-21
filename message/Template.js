@@ -9,8 +9,6 @@ class Template{
     return response;
   }
 
-}
-
   persistentMenu(){
     var response;
     response={
@@ -42,5 +40,8 @@ class Template{
     }
   return response;
   }
+}
+
+
 
 module.exports = Template
