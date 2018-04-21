@@ -27,12 +27,33 @@ class Template{
                   "payload":"PAYBILL_PAYLOAD"
                 },
                 {
-                  "type":"web_url",
-                  "title":"Latest News",
-                  "url":"https://www.messenger.com/",
-                  "webview_height_ratio":"full"
+                  "title":"History",
+                  "type":"postback",
+                  "payload":"HISTORY_PAYLOAD"
+                },
+                {
+                  "title":"Contact Info",
+                  "type":"postback",
+                  "payload":"CONTACT_INFO_PAYLOAD"
                 }
               ]
+            },
+            {
+              "type":"web_url",
+              "title":"Latest News",
+              "url":"http://www.messenger.com/",
+              "webview_height_ratio":"full"
+            }
+          ]
+        },
+        {
+          "locale":"zh_CN",
+          "composer_input_disabled":false,
+          "call_to_actions":[
+            {
+              "title":"Pay Bill",
+              "type":"postback",
+              "payload":"PAYBILL_PAYLOAD"
             }
           ]
         }
