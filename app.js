@@ -6,7 +6,7 @@ const
   request = require('request'),
   express = require('express'),
   body_parser = require('body-parser'),
-  http = require("http"),
+  https = require("https"),
   Template = require('./message/Template.js'),
   app = express().use(body_parser.json()); // creates express http server
 
@@ -165,5 +165,5 @@ function callSendAPI(sender_psid, response) {
 }
 
 setInterval(function() {
-    http.get("https://ilogicsdev.herokuapp.com/");
+    https.get("https://ilogicsdev.herokuapp.com/");
 }, 300000);
