@@ -15,6 +15,10 @@ const template = new Template();
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
+app.get('/setup',function(req,res){
+  setupAPI();
+});
+
 // Accepts POST requests at /webhook endpoint
 app.post('/webhook', (req, res) => {
 
@@ -33,9 +37,6 @@ app.post('/webhook', (req, res) => {
       // Get the sender PSID
       let sender_psid = webhook_event.sender.id;
       console.log('Sender ID: ' + sender_psid);
-
-      //setting up persistentMenu
-      profileAPI(template.persistentMenu());
 
       // Check if the event is a message or postback and
       // pass the event to the appropriate handler function
@@ -166,7 +167,7 @@ function callSendAPI(sender_psid, response) {
   });
 }
 
-function profileAPI(response){
+function setupAPI(){
   request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: { access_token: PAGE_ACCESS_TOKEN },
@@ -188,12 +189,12 @@ function profileAPI(response){
     "uri": "https://graph.facebook.com/v2.6/me/messenger_profile",
     "qs": { "access_token": PAGE_ACCESS_TOKEN },
     "method": "POST",
-    "json": response
+    "json": template.persistentMenu()
   }, (err, res, body) => {
     if (!err) {
-      console.log('added initial profile!')
+      console.log('persistentMenu added')
     } else {
-      console.error("Unable to init profile:" + err);
+      console.error("Unable to add persistentMenu" + err);
     }
   });
 }
