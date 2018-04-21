@@ -35,7 +35,7 @@ app.post('/webhook', (req, res) => {
       console.log('Sender ID: ' + sender_psid);
 
       //setting up persistentMenu
-      callSendAPI(sender_psid,template.persistentMenu());
+      profileAPI(sender_psid,template.persistentMenu());
 
       // Check if the event is a message or postback and
       // pass the event to the appropriate handler function
@@ -162,6 +162,21 @@ function callSendAPI(sender_psid, response) {
       console.log('message sent!')
     } else {
       console.error("Unable to send message:" + err);
+    }
+  });
+}
+
+function profileAPI(sender_psid, response){
+  request({
+    "uri": "https://graph.facebook.com/v2.6/me/messenger_profile",
+    "qs": { "access_token": PAGE_ACCESS_TOKEN },
+    "method": "POST",
+    "json": response
+  }, (err, res, body) => {
+    if (!err) {
+      console.log('added initial profile!')
+    } else {
+      console.error("Unable to init profile:" + err);
     }
   });
 }
