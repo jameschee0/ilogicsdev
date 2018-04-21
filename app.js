@@ -23,7 +23,6 @@ app.post('/webhook', (req, res) => {
 
   // Check the webhook event is from a Page subscription
   if (body.object === 'page') {
-    template.persistentMenu();
     body.entry.forEach(function(entry) {
 
       // Gets the body of the webhook event
@@ -34,6 +33,8 @@ app.post('/webhook', (req, res) => {
       // Get the sender PSID
       let sender_psid = webhook_event.sender.id;
       console.log('Sender ID: ' + sender_psid);
+
+      callSendAPI(sender_psid,template.persistentMenu());
 
       // Check if the event is a message or postback and
       // pass the event to the appropriate handler function
